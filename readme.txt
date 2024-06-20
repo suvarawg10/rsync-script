@@ -33,7 +33,18 @@ Trial Count: Tracks and logs the number of trials it takes for the rsync process
 **Prerequisites**
 Ensure you have rsync and ssh installed on your system.
 Ensure you have the necessary permissions to run the script and access the source and destination paths.
-
+Passwordless SSH Setup
+-------------------------------------------------------------------
+To enable passwordless SSH access, follow these steps:
+Generate SSH Key Pair (if not already generated):
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Press Enter to accept the default file location and provide a passphrase if desired.
+Copy SSH Key to Remote Server
+ssh-copy-id -i ~/.ssh/id_rsa.pub <dest_user>@<dest_path>
+Replace <dest_user> and <dest_path> with the remote server's username and address.
+Verify SSH Key Authentication:
+ssh <dest_user>@<dest_path>
+---------------------------------------------------------------
 ***Instructions***:
 
 Clone or download the script to your local machine.
